@@ -1,6 +1,7 @@
 packing_list = []
-add_no_argument = "Legg til argument. Eksempel: add bukser"
-remove_no_argument = "Legg til argument. Eksempel: remove bukser"
+add_no_argument = "Spesifiser hva du vil legge til. Eksempel: add bukser"
+remove_no_argument = "Spesifiser hva du vil fjerne. Eksempel: remove bukser"
+trailing = "Error. Trailing characters"
 welcome_message = """-----------------
 PAKKELISTEPROGRAM
 -----------------
@@ -12,16 +13,22 @@ Kommandoer:
 print(welcome_message)
 while True:
     user_input = input().lower().split()
-    if (user_input[0] == "quit" or user_input[0] == "q") and len(user_input) == 1:
+    if (user_input[0] == "quit" or user_input[0] == "q"):
+        if len(user_input) > 1:
+            print(trailing)
+            continue
         break
 
-    if (user_input[0] == "list" or user_input[0] == "l") and len(user_input) == 1:
+    if (user_input[0] == "list" or user_input[0] == "l"):
+        if len(user_input) > 1:
+            print(trailing)
+            continue
         if len(packing_list) == 0:
             print("Listen er tom")
             continue
         print("Liste:")
         for i in packing_list:
-            print(f"\t{i}")
+            print(f"\t{i.capitalize()}")
         continue
 
     if user_input[0] == "add" or user_input[0] == "a":
