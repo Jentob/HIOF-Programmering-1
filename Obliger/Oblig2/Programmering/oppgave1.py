@@ -9,7 +9,7 @@ while True:
 
 if user_input == 42:
     print("Det stemmer, meningen med liver er 42!")
-elif (user_input >= 30) and (user_input <= 50):
+elif (user_input > 30) and (user_input < 50):
     print("Nærme, men feil.")
 else:
     print("FEIL!")

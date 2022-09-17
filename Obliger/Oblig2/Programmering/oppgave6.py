@@ -1,4 +1,5 @@
 packing_list = []
+not_recognized = "Ikke gjenkjent"
 add_no_argument = "Spesifiser hva du vil legge til. Eksempel: add bukser"
 remove_no_argument = "Spesifiser hva du vil fjerne. Eksempel: remove bukser"
 trailing = "Error. Trailing characters"
@@ -10,16 +11,17 @@ Kommandoer:
     add / a - Legger til i listen. Eksempel: add bukser
     remove / r - Fjerner fra listen. Eksempel: remove bukser
     quit / q - Avslutter programmet"""
+
 print(welcome_message)
 while True:
-    user_input = input().lower().split()
-    if (user_input[0] == "quit" or user_input[0] == "q"):
+    user_input = input("> ").lower().split()
+    if user_input[0] == "quit" or user_input[0] == "q":
         if len(user_input) > 1:
             print(trailing)
             continue
         break
 
-    if (user_input[0] == "list" or user_input[0] == "l"):
+    if user_input[0] == "list" or user_input[0] == "l":
         if len(user_input) > 1:
             print(trailing)
             continue
@@ -56,3 +58,5 @@ while True:
         else:
             print(f"Finner ikke {user_input} i listen")
         continue
+
+    print(not_recognized)

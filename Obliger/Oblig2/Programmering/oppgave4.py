@@ -15,7 +15,7 @@ oppgave3_list = [
 new_list = []
 
 for i in oppgave3_list:
-    if re.search("The Lord of the Rings", i):
+    if re.search("^The Lord of the Rings", i):
         new_list.append(i)
 
 for i in new_list:
