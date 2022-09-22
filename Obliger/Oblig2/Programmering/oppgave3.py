@@ -8,7 +8,7 @@ book_list = [
     "Tree and Leaf"
 ]
 
-print(f"{list[0]}\n{list[1]}\n{list[len(list) - 1]}\n{list[len(list) - 2]}\n")
+print(f"{book_list[0]}\n{book_list[1]}\n{book_list[len(book_list) - 1]}\n{book_list[len(book_list) - 2]}\n")
 
 book_list.extend([
     "The Silmarillion",

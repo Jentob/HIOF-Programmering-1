@@ -4,7 +4,7 @@ while True:
         user_input = int(input())
         break
     except ValueError:
-        print("Skriv inn et tall")
+        print("Skriv inn et heltall")
         continue
 
 if user_input == 42:
