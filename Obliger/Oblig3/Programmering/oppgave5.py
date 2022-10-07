@@ -18,13 +18,7 @@ movies = [
     }
 ]
 
-def add_movie(*movie):
-    name = movie[0]
-    year = movie[1]
-    if len(movie) < 3:
-        rating = 5.0
-    else:
-        rating = movie[2]
+def add_movie(name, year, rating = 5.0):
     movies.append({
         "name" : name,
         "year" : year,
@@ -59,17 +53,21 @@ def print_from_file(file_name):
     for i in file_content:
         print(f"{i['name'].title()} - {i['year']} has a rating of {i['rating']}")
 
-print(movies)
-add_movie("ijof", 500)
-add_movie("dfspofsp", 1233, 3.4)
-add_movie("f3fw", 2, 8.1)
-print(movies)
-
+print("\nPrinter ut listen")
 print_movies()
-
+add_movie("the Shawshank Redemption", 1994, 9.2)
+add_movie("The Godfather", 1972, 9.2)
+add_movie("The dark Knight", 2008, 9.0)
+print("\nLegger til tre filmer")
+print_movies()
+add_movie("12 Angry Men", "1957")
+print("\nLegger til film uten rating")
+print_movies()
+print("\nGjennonsnittsrating")
 print(average_rating(movies))
-
+print("\nPrinter ut filmer fra 2010")
 print(movies_year(movies, 2010))
 
-write_file(movies, "text.txt")
-print_from_file("text.txt")
+print("\nSkriver til en tekstfil og leser og printer den ut")
+write_file(movies, "filmer.txt")
+print_from_file("filmer.txt")
